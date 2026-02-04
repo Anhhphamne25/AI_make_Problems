@@ -9,6 +9,7 @@ class ProgrammingProblem(BaseModel):
     constraints: str
     note: str = ""
     difficulty: str
+    solution: str
     tags: List[str] = Field(default_factory=list)
     multipleFiles: Dict = Field(default_factory=dict)
     languages: List[str] = Field(default_factory=list)

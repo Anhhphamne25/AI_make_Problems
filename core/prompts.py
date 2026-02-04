@@ -16,6 +16,7 @@ GENERATOR_PROMPT = ChatPromptTemplate.from_messages([
         4. Output format chính xác, không nhập nhằng
         5. Constraints đầy đủ và PHÙ HỢP với nội dung bài
         6. Ngôn ngữ học thuật, phù hợp môi trường đại học
+        7. Viết code giải cho đề bài (ghi vào solution)
         7. Đề bài phải TỰ ĐỦ – không cần giả định ngầm
 
         ĐỘ KHÓ (BẮT BUỘC TỰ ĐÁNH GIÁ):
@@ -31,15 +32,8 @@ GENERATOR_PROMPT = ChatPromptTemplate.from_messages([
 
         LƯU Ý QUAN TRỌNG:
         - KHÔNG tự kiểm tra, KHÔNG tự phê duyệt
-        - KHÔNG viết lời giải
         - KHÔNG viết ví dụ nếu không cần thiết
         - Chỉ sinh nội dung đề bài
-        
-        FORMAT OUTPUT (BẮT BUỘC – JSON):
-        {{
-          "status": "Approved" hoặc "Rejected",
-          "feedback": "Nếu Approved: nhận xét ngắn gọn lý do đạt. Nếu Rejected: liệt kê góp ý, mỗi ý một dòng."
-        }}
         """
     ),
     ("human", "{topic}")
