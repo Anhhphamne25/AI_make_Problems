@@ -1,5 +1,6 @@
 from langchain_google_genai import ChatGoogleGenerativeAI
 from AI_make_Problems.models.respon import ProgrammingProblem, ProgrammingCritic
+import os
 
 llm = ChatGoogleGenerativeAI(
     model="gemini-3-flash-preview",

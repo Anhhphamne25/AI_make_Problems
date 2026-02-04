@@ -1,6 +1,13 @@
+from AI_make_Problems.models.state import GraphState
+from langgraph.graph import StateGraph, END
+from AI_make_Problems.models.respon import ProgrammingProblem
+from AI_make_Problems.graph.nodes import generate_node, critic_node, should_continue
 
-
-def generate_problem(topic: str) -> ProgrammingProblem:
+def generate_problem(
+    topic: str,
+    human_feedback: str | None = None,
+    problem: ProgrammingProblem | None = None,
+) -> ProgrammingProblem:
     graph = StateGraph(GraphState)
 
     graph.add_node("generate", generate_node)
@@ -22,7 +29,8 @@ def generate_problem(topic: str) -> ProgrammingProblem:
 
     result = app.invoke({
         "topic": topic,
-        "problem": None,
+        "problem": problem,
+        "human_feedback": human_feedback,
         "critic_result": None,
         "iteration": 0,
     })

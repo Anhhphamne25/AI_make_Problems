@@ -34,6 +34,12 @@ GENERATOR_PROMPT = ChatPromptTemplate.from_messages([
         - KHÔNG viết lời giải
         - KHÔNG viết ví dụ nếu không cần thiết
         - Chỉ sinh nội dung đề bài
+        
+        FORMAT OUTPUT (BẮT BUỘC – JSON):
+        {{
+          "status": "Approved" hoặc "Rejected",
+          "feedback": "Nếu Approved: nhận xét ngắn gọn lý do đạt. Nếu Rejected: liệt kê góp ý, mỗi ý một dòng."
+        }}
         """
     ),
     ("human", "{topic}")
@@ -64,10 +70,10 @@ CRITIC_PROMPT = ChatPromptTemplate.from_messages([
         - Đánh giá ngắn gọn, thẳng thắn, đúng trọng tâm
 
         FORMAT OUTPUT (BẮT BUỘC – JSON):
-        {
+        {{
           "status": "Approved" hoặc "Rejected",
           "feedback": "Nếu Approved: nhận xét ngắn gọn lý do đạt. Nếu Rejected: liệt kê góp ý, mỗi ý một dòng."
-        }
+        }}
 
         Đề bài cần đánh giá:
         {problem_text}

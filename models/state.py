@@ -5,4 +5,5 @@ class GraphState(TypedDict):
     topic: str
     problem: Optional[ProgrammingProblem]
     critic_result: Optional[ProgrammingCritic]
+    human_feedback: Optional[str]
     iteration: int
